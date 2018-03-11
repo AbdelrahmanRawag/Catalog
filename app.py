@@ -138,7 +138,7 @@ def gconnect():
     h = httplib2.Http()
 
     # Get the data from the Google API
-    result = json.loads(h.request(url, 'GET')[1])
+    result = json.loads(h.request(url, 'GET')[1].decode())
 
     # check if there is any errors
     if result.get('error') is not None:
